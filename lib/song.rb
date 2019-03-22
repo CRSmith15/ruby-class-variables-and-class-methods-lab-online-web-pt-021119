@@ -5,9 +5,12 @@ class Song
   @@artists = []
   
   def initialize(song_name, artist, genre)
-    @@count += 1 
-    @@genres << genre 
+    @name = name
+    @artist = artist
     @@artists << artist
+    @genre = genre
+    @@genres << genre
+    @@count += 1
   end
   
   def self.count
@@ -36,7 +39,7 @@ class Song
     genre_count
   end
   
-  def self.artists_count
+  def self.artist_count
     @@artists.inject(Hash.new(0)) { |total, i| total[i] += 1 ;total}
   end
       
